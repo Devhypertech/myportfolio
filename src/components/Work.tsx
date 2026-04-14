@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Work = () => {
   useGSAP(() => {
@@ -31,8 +31,14 @@ const Work = () => {
       end: `+=${translateX}`, // Use actual scroll width
       scrub: true,
       pin: true,
+      pinType: "transform",
+      invalidateOnRefresh: true,
       id: "work",
     },
+  });
+
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
   });
 
   timeline.to(".work-flex", {

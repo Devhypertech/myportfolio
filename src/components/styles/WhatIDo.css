@@ -1,15 +1,27 @@
 .whatIDO {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   place-items: center;
   position: relative;
   opacity: 1;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
   z-index: 9;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+.whatIDO-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  flex-shrink: 0;
 }
 .what-box {
   width: 50%;
@@ -73,12 +85,8 @@
   font-weight: 200;
   letter-spacing: 0.7px;
 }
-.what-content h4 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin: 0px;
-  font-size: 14px;
-  opacity: 0.3;
+.what-content h3 + p {
+  margin-top: 12px;
 }
 .what-content-in {
   opacity: 0;
@@ -313,9 +321,62 @@
     padding: 10px 50px;
   }
 }
+.core-skills {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 20px;
+  padding: 0 24px 40px;
+  box-sizing: border-box;
+}
+.core-skills-title {
+  font-size: calc(2.5vw + 22px);
+  line-height: 1.05;
+  font-weight: 600;
+  margin: 0 0 40px;
+  text-align: left;
+  width: 100%;
+}
+.core-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 48px;
+  width: 100%;
+}
+.core-skills-block {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.core-skills-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  color: var(--accentColor);
+  font-family: "Geist", sans-serif;
+}
+.core-skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.65;
+}
+.core-skills-list li + li {
+  margin-top: 6px;
+}
+
 @media only screen and (max-width: 900px) {
   .whatIDO {
+    padding-bottom: 60px;
+  }
+  .whatIDO-main {
     flex-direction: column;
+    min-height: auto;
   }
   .what-box h2 {
     margin: 50px 0;
@@ -327,6 +388,14 @@
   }
   .what-box:last-child {
     height: 500px;
+  }
+  .core-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .core-skills-title {
+    margin-bottom: 28px;
+    font-size: 42px;
   }
   .what-box {
     width: 500px;
@@ -374,6 +443,7 @@
     font-size: 25px;
   }
 }
+
 @media only screen and (max-width: 550px) {
   .whatIDO {
     place-items: inherit;

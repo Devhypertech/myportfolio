@@ -58,7 +58,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Moncy Yohannan</span>
+              Designed and Developed <br /> by <span>Syed Sajjad Haider</span>
             </h2>
             <h5>
               <MdCopyright /> 2024
